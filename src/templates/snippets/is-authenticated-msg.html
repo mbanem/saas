@@ -1,0 +1,5 @@
+{% if request.user.is_authenticated %} 
+<span style='color:forestgreen;font-size:14px;''>authenticated user</span>
+{% else %} 
+<span style='color:tomato;font-size:14px;''>not authenticated</span>
+{% endif %}

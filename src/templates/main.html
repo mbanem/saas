@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<></>
+{% block head_title %} 
+  Base.html Extended
+{% endblock head_title %}
+{% block content %}
+<p style="display: flex; gap: 1rem">
+      <a href="/">home</a>
+      <a href="/python-load">python-load</a>
+      <a href="/template">template</a>
+      <a href="/extended">extended</a>
+      {% if request.user.is_authenticated %}
+      <a href="/logout">logout</a>
+      {% else %}
+      <a href="/login">login</a>
+      {% endif %}
+    </p>
+
+<h1 style="color: blue; width:max-content;padding:4px 1.5rem; border:1px solid gray; border-radius:8px;margin:2rem 3rem;">
+  The Main Page
+</h1>
+<p style='color:navy;font-size:14px;margin:0;padding:0;'>
+  Held in templates folder with placeholders for developer_name and named block 'content' to send to base.html
+  from which it is derived
+</p>
+{% endblock content %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- the same named block wrappers must be defined at both sides
+        in the source and at the target. The source block content would
+        replace the target with such a content
+        Here we define target block wrapper with a default content if
+        source does not supply some. It should allow every page to set
+        page title that appears in the web browser page tab
+    -->
+    <title>{% block head_title %} Django Intro {% endblock head_title %}</title>
+  </head>
+  <body>
+    <p style="display: flex; gap: 1rem">
+      <a href="/">home</a>
+      <a href="/python-load">python-load</a>
+      <a href="/template">template</a>
+      <a href="/extended">extended</a>
+      {% if request.user.is_authenticated %}
+      <a href="/logout">logout</a>
+      {% else %}
+      <a href="/login">login</a>
+      {% endif %}
+    </p>
+    <h1 style="color: royalblue; margin-left: 2rem">
+      Hello from base.html template
+    </h1>
+    <p style="font-size: 20px; color: purple; margin-left: 2rem">
+      {% block content %}{% endblock content %}
+    </p>
+    {% block form %} {% endblock form %}
+    <p style="color: black; font-size: 14px; margin-left: 2rem">
+      developed by
+      <span style="color: purple; font-size: 18px; font-style: italic"
+        >{{developer_name}}</span
+      >
+    </p>
+    {% include 'snippets/is-authenticated-msg.html' %}
+    <p>
+      Visited this page so far
+      <span style="color: green">{{ visited_count }}</span>
+    </p>
+    <p>All pages total <span style="color: green">{{ visited_total }}</span></p>
+  </body>
+</html>

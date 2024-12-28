@@ -1,0 +1,5 @@
+{
+  // to fix 'Timeout waiting for debugger connections'
+  "python.terminal.activateEnvironment": true,
+  "terminal.integrated.fontSize": 15
+}

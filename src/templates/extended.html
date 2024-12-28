@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+<></>
+{% block head_title %} 
+  Base.html Extended
+{% endblock head_title %}
+<p style="display: flex; gap: 1rem">
+      <a href="/">home</a>
+      <a href="/python-load">python-load</a>
+      <a href="/template">template</a>
+      <a href="/extended">extended</a>
+      {% if request.user.is_authenticated %}
+      <a href="/logout">logout</a>
+      {% else %}
+      <a href="/login">login</a>
+      {% endif %}
+    </p>
+{% block content %}
+This is an Extended named block content sent to the sibling block in the base.html 
+{% endblock content %}
+
+{% block form %}
+<form action="/" method="post" style='margin-left:2rem;'>
+  <label for="first_name" style='display:block'>FirstName</label>
+  <input type="text" name="first_name" id="first_name">
+  <label for="last_name" style='display:block'>Last Name</label>
+  <input type="text" name="last_name" id="last_name">
+  <label for="email" style='display:block'>eMail</label>
+  <input type="text" name="email" id="email">
+  <label for="password" style='display:block'>Password</label>
+  <input type="password" name="password" id="password">
+</form>
+{% endblock form %}

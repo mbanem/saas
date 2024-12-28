@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block page_title%} Login {% endblock page_title%}
+{% block form %}
+<h1>Login Page</h1>
+<p>name {{ request.path }}</p>
+<form action="/" method="post" style="margin-left: 2rem">
+  <label for="first_name" style="display: block">FirstName</label>
+  <input type="text" name="first_name" id="first_name" />
+  <label for="last_name" style="display: block">Last Name</label>
+  <input type="text" name="last_name" id="last_name" />
+  <label for="email" style="display: block">eMail</label>
+  <input type="text" name="email" id="email" />
+  <label for="password" style="display: block">Password</label>
+  <input type="password" name="password" id="password" />
+</form>
+{% endblock form %}

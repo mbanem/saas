@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+
+  <body>
+    <p style="display: flex; gap: 1rem">
+      <a href="/">home</a>
+      <a href="/python-load">python-load</a>
+      <a href="/template">template</a>
+      <a href="/extended">extended</a>
+      <a href="/login">login</a>
+      <a href="/logout">logout</a>
+    </p>
+    <h1 style="color: royalblue">The Home Page</h1>
+
+    <pre style="color: navy; font-size: 15px; font-weight: 500">
+  This page contains &lcub;&lcub;title&rcub;&rcub;, a Django substring placeholder,
+  meant to be filed programmatically inside the views.py at path  
+  http://localhost:8000/ with value of a dictionary &lcub;'title', value&rcub;, 
+  which is 'Dictionary value replaced and rendered with Django Templating Engine'
+
+  NOTE: when loading this page with read_text() placeholders didn't work but
+  workaround is to insert special chars and dynamically replace them wrapping in
+  curly braces, e.g. &lcub;developer_name&rcub;
+  Placeholders wrapped in double curly braces work with templates only specified
+  in the setting.py under the APP_DIRS in the TEMPLATES list
+    </pre>
+    <p style="font-size: 14px; color: black">
+      developed by
+      <span style="color: purple; font-size: 18px; font-style: italic">
+        {{ developer_name }}
+      </span>
+    </p>
+
+    <p style="color: black; font-size: 14px">
+      the title
+      <span style="color: purple; font-size: 18px; font-style: italic"
+        >{{ title }}</span
+      >
+    </p>
+    <p>Visited so far <span style="color: green">{{ visited_count }}</span></p>
+    <p>All pages total <span style="color: green">{{ visited_total }}</span></p>
+  </body>
+</html>
